@@ -22,6 +22,9 @@ function Header() {
   );
 }
 
+// This is called as object destructring
+//{ image, title, description }
+
 function CoreConcept({ image, title, description }) {
   return (
     <li>
