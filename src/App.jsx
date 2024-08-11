@@ -2,7 +2,7 @@ import { CORE_CONCEPTS,EXAMPLES } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
-import { useState} from 'react';
+import { useState,Fragment} from 'react';
 
 //import { EXAMPLES } from './data.js';
 
@@ -25,7 +25,11 @@ function App() {
 console.log("App Component")
 
   return (
-    <div>
+    // Extra div is inserted over as we can return only value
+    // To avoid this we can use Fragment
+    //<Fragment>
+    // OR we can use <> to avoid extra div
+    <>
       <Header />
       <main>
         <section id="core-concepts">
@@ -54,7 +58,8 @@ console.log("App Component")
           </div>)}
         </section>
       </main>
-    </div>
+    </>
+    //</Fragment>
   );
 }
 
