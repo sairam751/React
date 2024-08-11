@@ -15,6 +15,8 @@ function App() {
   }
 
 
+console.log("App Component")
+
   return (
     <div>
       <Header />
