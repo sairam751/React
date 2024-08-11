@@ -44,10 +44,10 @@ console.log("App Component")
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect1={() => handleSelect('components')}>Components</TabButton>
-            <TabButton onSelect1={() =>handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect1={() =>handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect1={() =>handleSelect('state')}>State</TabButton>
+            <TabButton isSelected = {selectedTopic === 'components'?true:false} onSelect1={() => handleSelect('components')}>Components</TabButton>
+            <TabButton isSelected = {selectedTopic === 'jsx'?true:false} onSelect1={() =>handleSelect('jsx')}>JSX</TabButton>
+            <TabButton isSelected = {selectedTopic === 'props'?true:false} onSelect1={() =>handleSelect('props')}>Props</TabButton>
+            <TabButton isSelected = {selectedTopic === 'state'?true:false} onSelect1={() =>handleSelect('state')}>State</TabButton>
           </menu>
           {!selectedTopic ?<p>Please select a topic.</p>:(
           <div id="tab-content"> 
