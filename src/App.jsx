@@ -1,14 +1,16 @@
-import { CORE_CONCEPTS } from './data.js';
+import { CORE_CONCEPTS,EXAMPLES } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 import { useState} from 'react';
 
+//import { EXAMPLES } from './data.js';
+
 function App() {
 
   // Use state can only be used in the direct react components. we can use usestate here
   
-  const [selectedTopic, setSelectedTopic] = useState('please click a button')
+  const [selectedTopic, setSelectedTopic] = useState('jsx');
   let tabContent = "Please select a button"
 
   function handleSelect(selectedButton) {
@@ -42,12 +44,18 @@ console.log("App Component")
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect1={() => handleSelect('Components')}>Components</TabButton>
-            <TabButton onSelect1={() =>handleSelect('JSX')}>JSX</TabButton>
-            <TabButton onSelect1={() =>handleSelect('Props')}>Props</TabButton>
-            <TabButton onSelect1={() =>handleSelect('State')}>State</TabButton>
+            <TabButton onSelect1={() => handleSelect('components')}>Components</TabButton>
+            <TabButton onSelect1={() =>handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect1={() =>handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect1={() =>handleSelect('state')}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
