@@ -1,13 +1,10 @@
 //children is the default parameter is passed with the props
-export default function TabButton({ children }) {
+export default function TabButton({ children, onSelect1 }) {
 
-  function handleClick() {
-    console.log('Hello World!');
-  }
   
   return (
     <li>
-      <button onClick = {handleClick}>{children}</button>
+      <button onClick = {onSelect1}>{children}</button>
     </li>
   );
 }
