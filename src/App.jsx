@@ -10,7 +10,7 @@ function App() {
 
   // Use state can only be used in the direct react components. we can use usestate here
   
-  const [selectedTopic, setSelectedTopic] = useState('jsx');
+  const [selectedTopic, setSelectedTopic] = useState();
   let tabContent = "Please select a button"
 
   function handleSelect(selectedButton) {
@@ -49,13 +49,14 @@ console.log("App Component")
             <TabButton onSelect1={() =>handleSelect('props')}>Props</TabButton>
             <TabButton onSelect1={() =>handleSelect('state')}>State</TabButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
+          {!selectedTopic ?<p>Please select a topic.</p>:(
+          <div id="tab-content"> 
+             <h3>{EXAMPLES[selectedTopic].title}</h3>
             <p>{EXAMPLES[selectedTopic].description}</p>
             <pre>
               <code>{EXAMPLES[selectedTopic].code}</code>
             </pre>
-          </div>
+          </div>)}
         </section>
       </main>
     </div>
